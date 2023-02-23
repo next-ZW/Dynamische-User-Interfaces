@@ -11,6 +11,5 @@ function bereken_poten(hoeveel_giraffen,hoeveel_struisvogels,hoeveel_zebras){
     return totaal;
 } 
 
-
 console.log(bereken_poten(hoeveel_giraffen,hoeveel_struisvogels,hoeveel_zebras))
 
