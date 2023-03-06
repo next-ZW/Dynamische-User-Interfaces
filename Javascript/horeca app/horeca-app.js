@@ -1,16 +1,8 @@
-const fris = 4
-const bier = 3
-const wijn = 5
-
-geen_idee = " "
-
-invoer = prompt("wat wilt u bestellen")
-
-
-
-
-
-
+const prijs = {
+    bier: 1.5,
+    wijn: 2.5,
+    fris: 3,
+  };
 
 
 
