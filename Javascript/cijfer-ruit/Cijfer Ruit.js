@@ -8,7 +8,7 @@ for (let a = 1; a <= invoer; a++){
     uitkomst = uitkomst.slice(0,-1)
     uitkomst += "<br>"
 
-    document.getElementById("uitkomst").innerHTML += uitkomst ;
+    document.getElementById("uitkomst").innerHTML += uitkomst;
     uitkomst = ""
 }
 
@@ -19,6 +19,6 @@ for (let a = invoer -1; a >= 1; a--){
     uitkomst = uitkomst.slice(0,-1)
     uitkomst += "<br>"
 
-    document.getElementById("uitkomst").innerHTML += uitkomst ;
+    document.getElementById("uitkomst").innerHTML += uitkomst;
     uitkomst = ""
 }
