@@ -1,6 +1,6 @@
 loggedIn = [];
 
-function getIndexOfelemntByName(loggedIn, naam){
+function getIndexOfElementByName(loggedIn, naam){
     
   
 }
