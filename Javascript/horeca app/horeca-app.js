@@ -1,3 +1,10 @@
+const prijslijst = {
+  fris: 3,
+  bier: 1,
+  wijn: 2,
+};
+
+
 function bestellingen() {
     while (true) {
       const drankje = prompt("Wat wilt u bestellen? (fris, bier, wijn)").toLowerCase();
@@ -16,3 +23,4 @@ function bestellingen() {
     }
   }
   bestellingen();
+
