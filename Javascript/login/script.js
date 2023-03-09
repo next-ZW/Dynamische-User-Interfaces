@@ -1,5 +1,10 @@
 loggedIn = [];
 
+function getIndexOfelemntByName(loggedIn, naam){
+    
+  
+}
+
 function handlelogin(){
     console.log(loggedIn)
 
@@ -15,7 +20,7 @@ function handlelogin(){
         document.getElementById("melding").innerText = "uw bent uitgelogd: " + naam;
         document.getElementById('inputNaam').value = '';
     } else{// niet ingelogd dan toevoegen aan array
-        loggedIn.push(naam);
+        loggedIn.push({naam : naam, date : Date()});
         document.getElementById("melding").innerText = "uw bent in gelogd: " + naam;
         console.log("uw bent ingelogd " + naam);
     }
