@@ -1,57 +1,56 @@
-const prijslijst = {
-  fris: 3,
-  bier: 1,
-  wijn: 2,
-};
-const bonnetje = "";
+let uitkomst = "";
+let bon = [];
 
+let element = bon.find(element => element.drank == gekozen_drank)
 
-let totale_prijs = 0;
-let stop = false;
-let drinken;
-let productAmount = NaN;
-let amountNaN = true;
+let fris = 6.99;
+let bier = 4.99;
+let wijn = 7.99;
 
-function bestelling(){ 
-while (!stop) {
-  drinken = prompt("Wat zou u willen bestellen? kies uit fris bier wijn");
+let gekozen_drank = ''
 
-  if (drinken === "stop") {
-    stop = true;
-  }
-  else {
-    if (!(drinken in dranken)) {
-      alert(`Momenteel is ${drinken} uitverkocht. Sorry voor dit ongemak.`);
-    }
-    else {
-      while (amountNaN) {
-        productAmount = parseInt(prompt(`Hoeveel ${drinken} wilt u bestellen?`));
-        if (!isNaN(productAmount)) {
-          amountNaN = false;
+function bestelling() {
+    while (gekozen_drank != 'stop') {
+        gekozen_drank = prompt('wat wilt u bestellen');
+        if (gekozen_drank == 'bier') {
+            console.log('1 bier is ', bier, ' euro');
+            let vraag_hoeveel = parseInt(prompt('hoeveel ', gekozen_drank, ' wilt u'));
+            if (element = bon.find(element => element.drank == 'bier')) {
+                element['aantal'] += vraag_hoeveel;
+                element['totaal'] += vraag_hoeveel * bier
+            } else {
+                element = { 'drank': 'bier', 'aantal': vraag_hoeveel, 'prijs': (bier), 'totaal': (bier * vraag_hoeveel) };
+                bon.push(element);
+            }
+        } else if (gekozen_drank == 'fris') {
+            console.log('1 fris is ', fris, ' euro');
+            vraag_hoeveel = parseInt(prompt('hoeveel ', gekozen_drank, ' wilt u'));
+            if (element = bon.find(element => element.drank == 'fris')) {
+                element['aantal'] += vraag_hoeveel
+                element['totaal'] += vraag_hoeveel * fris
+            } else {
+                element = { 'drank': 'fris', 'aantal': vraag_hoeveel, 'prijs': (fris), 'totaal': (fris * vraag_hoeveel) };
+                bon.push(element);
+            }
+        } else if (gekozen_drank == 'wijn') {
+            console.log('1 wijn is ', wijn, ' euro');
+            vraag_hoeveel = parseInt(prompt('hoeveel ', gekozen_drank, ' wilt u'));
+            if (element = bon.find(element => element.drank == 'wijn')) {
+                element['aantal'] += vraag_hoeveel
+                element['totaal'] += vraag_hoeveel * wijn
+            } else {
+                element = { 'drank': 'wijn', 'aantal': vraag_hoeveel, 'prijs': (wijn), 'totaal': (wijn * vraag_hoeveel) };
+                bon.push(element);
+            }
+        } else {
+            console.log('kies bier, wijn of fris')
         }
-      }
 
-      amountNaN = true;
 
-      if (drinken in bonnetje) {
-        bonnetje[drinken] += productAmount;
-      }
-      else {
-        bonnetje[drinken] = productAmount;
-      }
-
-      totale_prijs += productAmount * dranken[drinken];
     }
-  }
 }
+function rekening_tonen() {
+    console.log(bon)
 }
-
-for (const [key, value] of Object.entries(bonnetje)) {
-  const display = `${value}x ${key} - €${(value * dranken[key]).toFixed(2)}`
-  document.getElementById("Bonnetje").innerText = "Uw Bonnetje - Bedankt voor het bestellen!";
-  document.getElementById("Dranken").innerText += display + '\n';
-}
-
-if (totale_prijs > 0) {
-  document.getElementById("Totale_prijs").innerText = "Totaal: €" + totale_prijs.toFixed(2);
-}
+bestelling()
+rekening_tonen()
