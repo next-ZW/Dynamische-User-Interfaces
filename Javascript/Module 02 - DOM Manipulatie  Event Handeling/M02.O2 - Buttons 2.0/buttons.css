@@ -1,0 +1,15 @@
+div{
+    border-style: solid; width: 600px; height: 660px; position: relative;
+}
+
+img.twee{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: 120px;
+    width: 120px;
+}
+
+button{
+    background-color: #4baf53;
+}
